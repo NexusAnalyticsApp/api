@@ -1,0 +1,155 @@
+export interface Match {
+  gameid: string;
+  datacompleteness: string;
+  url: string;
+  league: string;
+  year: number;
+  split: string;
+  playoffs: number;
+  date: string;
+  game: number;
+  patch: number;
+  gamelength: number;
+  winner_teamid: string;
+}
+
+export interface Team {
+  teamid: string;
+  teamname: string;
+}
+
+export interface Player {
+  playerid: string;
+  playername: string;
+}
+
+export interface TeamMatchStat {
+  "Unnamed: 0": number;
+  gameid: string;
+  teamid: string;
+  side: string;
+  result: number;
+  teamkills: number;
+  teamdeaths: number;
+  ban1: string;
+  ban2: string;
+  ban3: string;
+  ban4: string;
+  ban5: string;
+  firstdragon: number;
+  dragons: number;
+  opp_dragons: number;
+  elementaldrakes: number;
+  opp_elementaldrakes: number;
+  infernals: number;
+  mountains: number;
+  clouds: number;
+  oceans: number;
+  chemtechs: number;
+  hextechs: number;
+  "dragons (type unknown)": number;
+  elders: number;
+  opp_elders: number;
+  firstherald: number;
+  heralds: number;
+  opp_heralds: number;
+  void_grubs: number;
+  opp_void_grubs: number;
+  firstbaron: number;
+  barons: number;
+  opp_barons: number;
+  atakhans: number;
+  opp_atakhans: number;
+  firsttower: number;
+  towers: number;
+  opp_towers: number;
+  firstmidtower: number;
+  firsttothreetowers: number;
+  turretplates: number;
+  opp_turretplates: number;
+  inhibitors: number;
+  opp_inhibitors: number;
+  "team kpm": number;
+  ckpm: number;
+}
+
+export interface PlayerMatchStat {
+  participantid: number;
+  gameid: string;
+  playerid: string;
+  teamid: string;
+  side: string;
+  position: string;
+  champion: string;
+  kills: number;
+  deaths: number;
+  assists: number;
+  doublekills: number;
+  triplekills: number;
+  quadrakills: number;
+  pentakills: number;
+  firstblood: number;
+  firstbloodkill: number;
+  firstbloodassist: number;
+  firstbloodvictim: number;
+  damagetochampions: number;
+  dpm: number;
+  damageshare: number;
+  damagetakenperminute: number;
+  damagemitigatedperminute: number;
+  wardsplaced: number;
+  wpm: number;
+  wardskilled: number;
+  wcpm: number;
+  controlwardsbought: number;
+  visionscore: number;
+  vspm: number;
+  totalgold: number;
+  earnedgold: number;
+  "earned gpm": number;
+  earnedgoldshare: number;
+  goldspent: number;
+  gspd: number;
+  gpr: number;
+  "total cs": number;
+  minionkills: number;
+  monsterkills: number;
+  monsterkillsownjungle: number;
+  monsterkillsenemyjungle: number;
+  cspm: number;
+  goldat10: number;
+  xpat10: number;
+  csat10: number;
+  opp_goldat10: number;
+  opp_xpat10: number;
+  opp_csat10: number;
+  golddiffat10: number;
+  xpdiffat10: number;
+  csdiffat10: number;
+  killsat10: number;
+  assistsat10: number;
+  deathsat10: number;
+  opp_killsat10: number;
+  opp_assistsat10: number;
+  opp_deathsat10: number;
+  goldat15: number;
+  xpat15: number;
+  csat15: number;
+  opp_goldat15: number;
+  opp_xpat15: number;
+  opp_csat15: number;
+  golddiffat15: number;
+  xpdiffat15: number;
+  csdiffat15: number;
+  killsat15: number;
+  assistsat15: number;
+  deathsat15: number;
+  opp_killsat15: number;
+  opp_assistsat15: number;
+  opp_deathsat15: number;
+  pick1: string;
+  pick2: string;
+  pick3: string;
+  pick4: string;
+  pick5: string;
+}

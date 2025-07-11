@@ -1,0 +1,16 @@
+name = "nexus-analytics-api"
+main = "src/index.ts"
+compatibility_date = "2024-09-23" # Updated compatibility_date
+
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+DATABASE_URL = "postgresql://uu6k6t:xau_Tlj6IMVOLQxZQsnYTQ8uY95ZNSRvmvW66@eu-central-1.sql.xata.sh/NexusAnalyticsApp:main?sslmode=require"
+
+[env.development]
+[env.development.vars]
+DATABASE_URL = "postgresql://uu6k6t:xau_Tlj6IMVOLQxZQsnYTQ8uY95ZNSRvmvW66@eu-central-1.sql.xata.sh/NexusAnalyticsApp:main?sslmode=require"
+
+[env.production]
+[env.production.vars]
+DATABASE_URL = "postgresql://uu6k6t:xau_Tlj6IMVOLQxZQsnYTQ8uY95ZNSRvmvW66@eu-central-1.sql.xata.sh/NexusAnalyticsApp:main?sslmode=require"
