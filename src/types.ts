@@ -153,3 +153,173 @@ export interface PlayerMatchStat {
   pick4: string;
   pick5: string;
 }
+
+export interface DashboardSummary {
+  total_matches: number;
+  total_champions: number;
+  total_players: number;
+  avg_game_length_min: number;
+  avg_kills_per_game: number;
+  blue_side_win_rate: number;
+  changes: {
+    total_matches_pct_change_week: number;
+    total_champions_new_week: number;
+    total_players_new_week: number;
+    avg_game_length_min_change: number;
+    avg_kills_per_game_change: number;
+    blue_side_win_rate_change: number;
+  };
+}
+
+export interface ChampionMetaTierList {
+  champion_name: string;
+  role: string;
+  pick_rate: number;
+  win_rate: number;
+  tier: string;
+}
+
+export interface NewsRecentActivity {
+  type: string;
+  title: string;
+  timestamp: string;
+  game_id?: string;
+  player_id?: string;
+}
+
+export interface ChampionStats {
+  champion_name: string;
+  role: string;
+  pick_rate: number;
+  win_rate: number;
+  ban_rate: number;
+  total_games: number;
+  avg_kda: number;
+  performance_by_league: { [key: string]: { win_rate: number; games: number } };
+  best_matchups: { opponent_champion: string; win_rate: number; games: number }[];
+  worst_matchups: { opponent_champion: string; win_rate: number; games: number }[];
+}
+
+export interface ChampionPowerTimeline {
+  champion_name: string;
+  win_rate_by_minute: { minute: number; win_rate: number }[];
+  strengths: string[];
+}
+
+export interface PlayerStats {
+  player_name: string;
+  team_name: string;
+  role: string;
+  season_stats: {
+    games: number;
+    win_rate: number;
+    kda: number;
+    damage_share: number;
+    gpm: number;
+    cspm: number;
+  };
+  champion_pool: { champion_name: string; games: number; win_rate: number }[];
+  comparison_stats: {
+    LCK_mid_avg: { kda: number; damage: number; gold: number };
+    rankings: { kda: number; damage: number; gold: number };
+  };
+}
+
+export interface PlayerComparison {
+  player_id: string;
+  player_name: string;
+  games: number;
+  win_rate: number;
+  kda: number;
+  dpm: number;
+  gpm: number;
+  cspm: number;
+  champion_pool_size: number;
+  most_played_champion: string;
+}
+
+export interface DraftAnalysis {
+  pick_priority: { champion_name: string; role: string; first_pick_win_rate: number; first_picks_count: number }[];
+  ban_priority: { champion_name: string; ban_rate: number; total_games_in_patch: number }[];
+  flex_picks: { champion_name: string; roles: string[]; global_win_rate: number }[];
+  counter_picks: { champion_name: string; vs_champion: string; win_rate: number; games: number }[];
+}
+
+export interface TeamComposition {
+  name: string;
+  win_rate: number;
+  games: number;
+  description: string;
+  example_champions: string[];
+}
+
+export interface LeagueMetaComparison {
+  [league_id: string]: {
+    avg_game_time_min: number;
+    avg_kills_per_game: number;
+    most_picked_champions: string[];
+    unique_meta_description: string;
+  };
+}
+
+export interface PatchEvolution {
+  patch_number: string;
+  weeks: {
+    week_start_date: string;
+    emerging_champions: { champion_name: string; win_rate_change: string; pick_rate_change: string }[];
+    declining_champions: { champion_name: string; win_rate_trend: string; pick_rate_trend: string }[];
+    stable_champions: { champion_name: string; win_rate: number; pick_rate: number }[];
+  }[];
+}
+
+export interface ChampionHistoricalPerformance {
+  champion_name: string;
+  season_data: {
+    season: string;
+    split: string;
+    pick_rate: number;
+    win_rate: number;
+    notes: string;
+  }[];
+  prediction: string;
+}
+
+export interface MatchPrediction {
+  team1_id: string;
+  team2_id: string;
+  team1_win_probability: number;
+  most_likely_score: string;
+  confidence: string;
+  key_factors: string[];
+}
+
+export interface ChampionRecommendation {
+  situation: {
+    side: string;
+    pick_number: number;
+    role: string;
+    enemy_team_champions: string[];
+    your_team_champions: string[];
+  };
+  recommendations: {
+    champion_name: string;
+    tier: string;
+    win_rate_vs_comp_type: number;
+    reasons: string[];
+  }[];
+  avoid_champions: { champion_name: string; reason: string }[];
+}
+
+export interface MetaShiftAlert {
+  timestamp: string;
+  rising_threats: { champion_name: string; role: string; win_rate_trend: string; pick_rate_trend: string }[];
+  declining_picks: { champion_name: string; role: string; win_rate_trend: string; pick_rate_trend: string }[];
+  immediate_actions: string[];
+}
+
+export interface PlayerPerformanceAlert {
+  timestamp: string;
+  hot_streaks: { player_name: string; team_name: string; description: string }[];
+  concerning_trends: { player_name: string; team_name: string; description: string }[];
+  injury_alerts: { player_name: string; team_name: string; description: string }[];
+}

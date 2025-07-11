@@ -77,6 +77,22 @@ Aquí podrás ver todos los endpoints disponibles, sus parámetros, esquemas de 
 -   `GET /team-match-stats/{gameid}`: Obtiene estadísticas de partidos por equipo para un ID de juego específico.
 -   `GET /player-match-stats`: Obtiene estadísticas de partidos por jugador.
 -   `GET /player-match-stats/{gameid}`: Obtiene estadísticas de partidos por jugador para un ID de juego específico.
+-   `GET /dashboard/summary`: Proporciona un resumen de métricas clave a nivel global.
+-   `GET /champions/meta-tier-list`: Devuelve una lista de campeones clasificados por su rendimiento en el meta actual (Tier List).
+-   `GET /news/recent-activity`: Proporciona un feed de actividades y eventos recientes relevantes.
+-   `GET /champions/{champion_name}/stats`: Obtiene estadísticas detalladas para un campeón específico.
+-   `GET /champions/{champion_name}/power-timeline`: Muestra la evolución del poder (Win Rate) de un campeón a lo largo de la duración de la partida.
+-   `GET /players/{player_id}/stats`: Proporciona estadísticas detalladas de un jugador para una temporada específica.
+-   `GET /players/compare`: Compara las estadísticas de múltiples jugadores.
+-   `GET /draft/analysis`: Proporciona análisis sobre la fase de selección y bloqueo de campeones.
+-   `GET /team-compositions/winning`: Lista las composiciones de equipo más exitosas.
+-   `GET /leagues/meta-comparison`: Compara las características del meta entre diferentes ligas.
+-   `GET /patches/{patch_number}/evolution`: Muestra la evolución del meta de campeones a lo largo de las semanas dentro de un parche.
+-   `GET /champions/{champion_name}/historical-performance`: Proporciona el rendimiento histórico de un campeón a lo largo de las temporadas.
+-   `POST /predictions/match`: Predice el resultado de una partida basándose en los equipos y, opcionalmente, las alineaciones de jugadores.
+-   `POST /recommendations/champion`: Recomienda campeones basados en una situación de draft específica.
+-   `GET /alerts/meta-shifts`: Proporciona alertas sobre cambios significativos en el meta.
+-   `GET /alerts/player-performance`: Alertas personalizadas sobre el rendimiento de los jugadores.
 
 ## Despliegue en Cloudflare Workers
 
